@@ -9,6 +9,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
+    chunkSizeWarningLimit: 1800, // Phaser pesa ~1,2 MB: es esperado
   },
   test: {
     environment: 'node',

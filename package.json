@@ -1,9 +1,9 @@
 {
   "name": "presidente",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "PRESIDENTE - Paso 0: verificación del flujo de trabajo",
+  "description": "PRESIDENTE - Fase 1: motor base",
   "engines": {
     "node": ">=22.12"
   },
@@ -13,6 +13,9 @@
     "test": "vitest run",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
   },
   "devDependencies": {
     "typescript": "~6.0.3",

@@ -2,28 +2,18 @@
 
 Simulador de civilización, sociedad, gobierno, economía, ciudades, deportes y medios (PWA para Android).
 
-**Estado actual: PASO 0 — verificación del flujo de trabajo.** Todavía no hay videojuego.
-La Fase 1 no ha comenzado y no empezará sin autorización expresa del director del proyecto.
+**Estado actual: Fase 1 (Motor Base), entrega 1 — v0.1.0, pendiente de validar en Android.**
+Paso 0 completado y validado. Cada entrega y cada fase avanzan solo con autorización expresa del director del proyecto.
+Ver `docs/ENTREGA-1-FASE-1.md`, `docs/ARQUITECTURA.md` y `docs/PRUEBAS-ENTREGA-1.md`.
 
-## Qué valida el Paso 0
+## Historial: qué validó el Paso 0
 1. Subir un ZIP desde el teléfono a GitHub, sin terminal.
 2. GitHub Actions descomprime, instala dependencias, ejecuta una prueba automática y compila.
 3. La página compilada se publica en GitHub Pages (https).
 4. La página se abre y se puede instalar como PWA en Android, y abre sin conexión.
 
 ## Estructura
-```
-index.html                  Entrada de la página
-src/main.ts                 Interfaz de diagnóstico (no es el juego)
-src/verificacion.ts         Lógica pura probada automáticamente
-src/verificacion.test.ts    Prueba automática (Vitest)
-src/globals.d.ts            Constantes de compilación
-public/manifest.webmanifest Manifest PWA (prueba)
-public/sw.js                Service Worker de prueba
-public/icon-*.png           Iconos de prueba
-vite.config.ts, tsconfig.json, package.json
-docs/                       Guías, lista de verificación y copia del flujo de Actions
-```
+Ver `docs/ARQUITECTURA.md` (capas core, world, render, ui, pwa).
 
 ## Flujo de trabajo
 Claude prepara un ZIP → el director lo sube al repositorio → `desplegar.yml` (GitHub Actions) lo
@@ -36,6 +26,6 @@ extrae, prueba, compila y publica → el director abre la URL en su Android y re
 ## Comandos (solo para quien tenga terminal; el director NO los necesita)
 `npm install` · `npm test` · `npm run build` · `npm run dev`
 
-## Limitaciones conocidas del Paso 0
+## Limitaciones conocidas
 - Los archivos eliminados entre versiones no se borran del repositorio automáticamente.
-- El Service Worker es solo de prueba (red primero, caché de respaldo).
+- El Service Worker es simple (red primero, caché de respaldo). Cambia `NOMBRE_CACHE` en `public/sw.js` y `src/pwa/pwa.ts` en cada versión.
