@@ -1,5 +1,7 @@
 # Fase 1 — Entrega 1 (v0.1.0): mapa isométrico y cámara táctil
 
+> **Estado: validada en Android el 5 de noviembre de 2026 (7 de 7). Pendiente de aprobación final.** Ver `docs/VALIDACION-ENTREGA-1.md`.
+
 ## Qué contiene
 - Mapa isométrico de 128x128 casillas generado con semilla (20261031).
 - 7 terrenos: mar profundo, agua, arena, pradera, bosque (con árboles), colina y montaña (con nieve).

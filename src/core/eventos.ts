@@ -3,6 +3,7 @@ import type { ResumenFps } from '../render/MedidorFps';
 export interface DatosRendimiento {
   fps: ResumenFps;
   zoom: number;
+  zoomMinimo: number;
   tilesDibujados: number;
   tilesReserva: number;
   renderizador: string;

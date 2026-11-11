@@ -1,6 +1,23 @@
 # Registro de cambios
 
-## 0.1.0 — Fase 1, entrega 1: mapa isométrico y cámara táctil (pendiente de validar en Android)
+## 0.2.0 — Mundo rectangular explorable (pendiente de validar en Android)
+Cambiado:
+- Mundo rectangular de 64 columnas x 256 filas (16.384 casillas) en disposición escalonada: sin la forma de rombo.
+- Cámara con límites reales: los bordes de la vista nunca salen de la zona cubierta (sin espacio vacío).
+- Zoom 0,20–3,0 con mínimo efectivo ajustado a cada pantalla y al girar el teléfono.
+- Generador de terreno: sin máscara de isla; agua coherente (sin charcas, mares, lagos, ríos y costas), proporciones exactas por tipo.
+- Dibujo: recorrido por filas con rango casi exacto (1,06–1,60 casillas exploradas por visible, antes ~3), margen de caché ligado al zoom, cuadrícula recalculada.
+- Informe y panel: muestran el zoom mínimo efectivo y el tamaño del mundo.
+- Nombre de la caché sin conexión: presidente-v0.2.
+Añadido: world/disposicion.ts (geometría escalonada, vecinos por arista), 64 pruebas automáticas.
+No cambiado: gráficos y estilo isométrico, controles táctiles, medidor de FPS, diagnóstico, PWA, manifest, iconos, flujo de GitHub Actions.
+Pendiente: validación en Android (docs/ENTREGA-2-V0.2.0.md). Rendimiento a zoom 0,20 sin medir en dispositivo.
+
+## Documentación (sin cambios de código) — registro de validación de la 0.1.0
+- Añadidos `docs/VALIDACION-ENTREGA-1.md` e `docs/INFORME-FINAL-ENTREGA-1.md`.
+- Actualizados el estado en README, ENTREGA-1 y PRUEBAS (los resultados anteriores se conservan).
+
+## 0.1.0 — Fase 1, entrega 1: mapa isométrico y cámara táctil (validada en Android, 7 de 7; pendiente de aprobación final)
 Añadido:
 - Phaser 3.90 como dependencia (^3.90.0).
 - Mapa isométrico 128x128 con 7 terrenos, árboles, colinas y montañas, generado con semilla.

@@ -1,12 +1,12 @@
 import Phaser from 'phaser';
 import type { EventBus } from '../core/EventBus';
 import type { EventosJuego } from '../core/eventos';
+import { zonaCubierta } from '../world/disposicion';
 import type { MapaMundo } from '../world/mapa';
 import { CapaTerreno } from './CapaTerreno';
 import { ControlGestos } from './ControlGestos';
 import { EstadoCamara } from './EstadoCamara';
 import { MedidorFps } from './MedidorFps';
-import { limitesMundo } from './iso';
 
 export interface DatosEscenaMapa {
   mapa: MapaMundo;
@@ -14,7 +14,8 @@ export interface DatosEscenaMapa {
 }
 
 const PERIODO_PUBLICACION_MS = 500;
-export const ZOOM_MINIMO = 0.4;
+/** Zoom mínimo objetivo; el real se ajusta a la pantalla para no mostrar nunca espacio vacío. */
+export const ZOOM_MINIMO = 0.2;
 export const ZOOM_MAXIMO = 3;
 
 export class EscenaMapa extends Phaser.Scene {
@@ -36,7 +37,7 @@ export class EscenaMapa extends Phaser.Scene {
     this.estado = new EstadoCamara(
       this.scale.width,
       this.scale.height,
-      { mundo: limitesMundo(mapa.ancho, mapa.alto), zoomMin: ZOOM_MINIMO, zoomMax: ZOOM_MAXIMO },
+      { zona: zonaCubierta(mapa.ancho, mapa.alto), zoomMin: ZOOM_MINIMO, zoomMax: ZOOM_MAXIMO },
       1,
     );
     this.gestos = new ControlGestos(this, this.estado);
@@ -61,6 +62,7 @@ export class EscenaMapa extends Phaser.Scene {
       this.datos.bus.emit('rendimiento', {
         fps: this.medidor.resumen(),
         zoom: this.estado.zoom,
+        zoomMinimo: this.estado.zoomMinimo(),
         tilesDibujados: this.capa.tilesDibujados,
         tilesReserva: this.capa.tilesReserva,
         renderizador: this.game.renderer.type === Phaser.WEBGL ? 'WebGL' : 'Canvas',

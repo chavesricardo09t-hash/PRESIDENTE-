@@ -54,7 +54,7 @@ export class Hud {
     this.texto.textContent =
       `PRESIDENTE v${__APP_VERSION__}\n` +
       `FPS ${f.actual.toFixed(0)}  (prom ${f.promedio5s.toFixed(0)} · mín ${f.minimo5s.toFixed(0)})\n` +
-      `Zoom ${d.zoom.toFixed(2)} · Casillas ${d.tilesDibujados}\n` +
+      `Zoom ${d.zoom.toFixed(2)} (mín ${d.zoomMinimo.toFixed(2)}) · Casillas ${d.tilesDibujados}\n` +
       `${d.renderizador} · ${d.pantalla}\n` +
       this.mapaInfo;
   }

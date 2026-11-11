@@ -100,3 +100,10 @@ Otras comprobaciones reales:
 - Gestos táctiles (arrastre y pellizco), rendimiento y FPS reales, aspecto en tu pantalla.
 - Service Worker con la nueva versión, instalación PWA y uso sin conexión de esta versión.
 - Todo el apartado de la lista de verificación de `docs/ENTREGA-1-FASE-1.md`: **solo tú puedes validarlo en Android**.
+
+## Actualización tras la validación en Android (5 nov 2026)
+Lo anterior se conserva tal cual. Después de subir la v0.1.0 a GitHub:
+- **Con evidencia indirecta:** instalación de dependencias, Vitest real y compilación con Vite y los tipos reales de Phaser pasaron en Actions, porque la versión 0.1.0 está publicada. No se ha visto el registro de esa ejecución.
+- **Validado por el director:** aspecto, nitidez, arrastre, zoom, fluidez con zoom mínimo, cuadrícula y uso sin conexión (7 de 7).
+- **Medido en el dispositivo:** rendimiento real, en `docs/VALIDACION-ENTREGA-1.md`.
+- Siguen sin ejecutarse: ninguna de las pruebas anteriores queda pendiente salvo comprobar el recuento de pruebas del registro de Actions (opcional).

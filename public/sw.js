@@ -1,5 +1,5 @@
 // Service Worker del Paso 0: red primero; si no hay red, usa la caché.
-const NOMBRE_CACHE = 'presidente-v0.1';
+const NOMBRE_CACHE = 'presidente-v0.2';
 
 self.addEventListener('install', () => {
   self.skipWaiting();

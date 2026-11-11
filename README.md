@@ -2,9 +2,9 @@
 
 Simulador de civilización, sociedad, gobierno, economía, ciudades, deportes y medios (PWA para Android).
 
-**Estado actual: Fase 1 (Motor Base), entrega 1 — v0.1.0, pendiente de validar en Android.**
+**Estado actual: v0.2.0 (mundo rectangular explorable), pendiente de validar en Android.** La v0.1.0 está validada (7 de 7); la Fase 1 sigue abierta.
 Paso 0 completado y validado. Cada entrega y cada fase avanzan solo con autorización expresa del director del proyecto.
-Ver `docs/ENTREGA-1-FASE-1.md`, `docs/ARQUITECTURA.md` y `docs/PRUEBAS-ENTREGA-1.md`.
+Ver `docs/ENTREGA-2-V0.2.0.md`, `docs/PRUEBAS-V0.2.0.md`, `docs/ARQUITECTURA.md`, y de la v0.1.0: `docs/VALIDACION-ENTREGA-1.md`.
 
 ## Historial: qué validó el Paso 0
 1. Subir un ZIP desde el teléfono a GitHub, sin terminal.

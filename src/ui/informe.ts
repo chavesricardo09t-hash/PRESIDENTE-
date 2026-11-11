@@ -18,6 +18,7 @@ export function construirInformeJuego(datos: DatosRendimiento | null, extra: Rec
     lineas['Fotogramas'] = `${f.fotogramas} (largos >50 ms: ${f.fotogramasLargos})`;
     lineas['Tiempo medido'] = `${f1(f.segundos)} s`;
     lineas['Zoom'] = datos.zoom.toFixed(2);
+    lineas['Zoom mínimo efectivo'] = datos.zoomMinimo.toFixed(3);
     lineas['Casillas dibujadas'] = `${datos.tilesDibujados} (reserva ${datos.tilesReserva})`;
     lineas['Renderizador'] = datos.renderizador;
     lineas['Pantalla del juego'] = datos.pantalla;

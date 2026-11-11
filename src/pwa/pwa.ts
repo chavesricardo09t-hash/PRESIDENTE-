@@ -1,7 +1,7 @@
 // Lógica PWA validada en el Paso 0 (Service Worker, caché sin conexión, instalación),
 // movida aquí sin cambiar su comportamiento.
 
-export const NOMBRE_CACHE = 'presidente-v0.1';
+export const NOMBRE_CACHE = 'presidente-v0.2';
 
 interface EventoInstalacion extends Event {
   prompt: () => Promise<void>;

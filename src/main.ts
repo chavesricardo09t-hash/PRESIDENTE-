@@ -12,8 +12,9 @@ import { formatearFechaCompilacion } from './verificacion';
 import { generarMapa } from './world/generador';
 
 const SEMILLA = 20261031;
-const ANCHO_MAPA = 128;
-const ALTO_MAPA = 128;
+/** Mundo rectangular de 64 columnas x 256 filas escalonadas = 16.384 casillas (4064 x 4080 px). */
+const COLUMNAS = 64;
+const FILAS = 256;
 
 function elemento(id: string): HTMLElement {
   const e = document.getElementById(id);
@@ -27,7 +28,7 @@ function memoriaJs(): string | null {
 }
 
 function arrancar(): void {
-  const mapa = generarMapa({ ancho: ANCHO_MAPA, alto: ALTO_MAPA, semilla: SEMILLA });
+  const mapa = generarMapa({ ancho: COLUMNAS, alto: FILAS, semilla: SEMILLA });
   const bus = new EventBus<EventosJuego>();
   let ultimo: DatosRendimiento | null = null;
   let rejillaActiva = false;
@@ -45,7 +46,7 @@ function arrancar(): void {
   iniciarPwa(diagnostico);
 
   // --- Interfaz del juego ---
-  const hud = new Hud(elemento('hud'), `Mapa ${ANCHO_MAPA}×${ALTO_MAPA} · semilla ${SEMILLA}`, {
+  const hud = new Hud(elemento('hud'), `Mundo ${COLUMNAS}×${FILAS} · semilla ${SEMILLA}`, {
     alternarRejilla: () => {
       rejillaActiva = !rejillaActiva;
       bus.emit('rejilla:cambiar', { visible: rejillaActiva });
@@ -62,6 +63,7 @@ function arrancar(): void {
   async function copiarInforme(): Promise<void> {
     const extra: Record<string, string> = {
       ...diagnostico.obtenerDatos(),
+      Mundo: `${COLUMNAS} columnas × ${FILAS} filas (${COLUMNAS * FILAS} casillas)`,
       'Pixel ratio': String(window.devicePixelRatio),
       Navegador: navigator.userAgent,
     };

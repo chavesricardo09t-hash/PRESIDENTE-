@@ -2,6 +2,7 @@
 // Esta capa NO depende de Phaser ni del navegador.
 
 export interface MapaMundo {
+  /** Columnas y filas de la disposición escalonada (ver disposicion.ts). */
   readonly ancho: number;
   readonly alto: number;
   readonly semilla: number;
